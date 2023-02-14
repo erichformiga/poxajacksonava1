@@ -12,7 +12,7 @@ namespace ArquivoDesordenado
             // Lê os números do arquivo que estão desordenados
             string[] numbers = File.ReadAllLines("input.txt");
             int[] intNumbers = Array.ConvertAll(numbers, int.Parse);
-            Console.WriteLine($"Valores desordenados: {string.Join(",", intNumbers)}");
+            Console.WriteLine($"Valores desordenados: {string.Join(",", numbers)}");
             // Usando a função sort consigo ordenar os números
             //Array.Sort(intNumbers);
             
@@ -29,9 +29,10 @@ namespace ArquivoDesordenado
                         intNumbers[i] = temp;
                     }
                 }
+            Console.WriteLine($"Criando Ordenação: {string.Join(",", intNumbers)}");
             }
         
-            Console.WriteLine($"Valores ordenados: {string.Join(",", intNumbers)}");
+            //Console.WriteLine($"Valores ordenados: {string.Join(",", intNumbers)}");
 
             // Efetuo a gravação dos números ordenados no arquivo
             StreamWriter writer = new StreamWriter("output.txt");
